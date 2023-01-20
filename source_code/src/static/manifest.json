@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Anime Manager",
+    "version": "1.0.0",
+    "description": "Manage your anime fast",
+    "icon": {
+        "16": "logo.png",
+        "48": "logo.png",
+        "64": "logo.png",
+        "128": "logo.png"
+    },
+    "action": {
+        "default_icon": {
+            "16": "logo.png",
+            "24": "logo.png",
+            "32": "logo.png"
+        },
+        "default_popup": "popup.html",
+        "default_title": "Anime Manager"
+    },
+    "options_page": "options.html",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["contentScript.js"]
+        }
+    ],
+    "permissions": ["storage", "tabs", "contextMenus", "alarms"]
+}
